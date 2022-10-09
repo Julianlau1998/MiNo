@@ -87,7 +87,8 @@ body {
     background-color: $mainBackground;
     border: 2px solid $secondary;
     border-radius: 20px;
-    text-align: center; 
+    text-align: center;
+    box-shadow: 0 0 0 10000px black;
 }
 
 .is-modal-wrapper {
