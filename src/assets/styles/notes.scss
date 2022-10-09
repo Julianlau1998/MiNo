@@ -1,5 +1,10 @@
 .notes {
     margin-bottom: 11rem;
+    margin: 0 auto;
+}
+.is-notes-wrapper {
+    margin: 0 auto !important;
+    max-width: 60rem;
 }
 .miniNote {
     width: 80%;
@@ -13,4 +18,10 @@
 
 .miniNote:hover {
     border: 4px solid $primary;   
+}
+
+@media (max-width: $tablet) {
+    .is-notes-wrapper{
+        margin: 7rem auto !important;
+    }
 }

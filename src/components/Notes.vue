@@ -1,12 +1,14 @@
 <template>
   <div class="notes">
-    <MiniNote
-      v-for="note in notes"
-      :key="note.id"
-      :note="note"
-      @open="openNote(note.id)"
-      @delete="openDeleteModal(note)"
-    />
+    <div class="columns is-notes-wrapper is-flex-wrap-wrap is-justify-content-center">
+      <MiniNote
+          v-for="note in notes"
+          :key="note.id"
+          :note="note"
+          @open="openNote(note.id)"
+          @delete="openDeleteModal(note)"
+      />
+    </div>
     <div v-if="notes.length < 1">
       <h3 class="is-size-3 pt-5">
         Welcome to MiNo

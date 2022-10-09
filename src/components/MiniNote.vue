@@ -1,8 +1,8 @@
 <template>
-  <div class="miniNote">
+  <div class="miniNote column is-5 mx-5-desktop mt-8 pl-5">
       <div class="columns is-mobile is-justify-content-center">
           <div @click="openNote" class="column is-10 is-align-left">
-                <h2 class="heading is-size-5">
+                <h2 class="is-size-5">
                     {{ note.note.substring(0, 11) }}
                 </h2>
           </div>
