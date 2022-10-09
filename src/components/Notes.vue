@@ -7,6 +7,14 @@
       @open="openNote(note.id)"
       @delete="openDeleteModal(note)"
     />
+    <div v-if="notes.length < 1">
+      <h3 class="is-size-3 pt-5">
+        Welcome to MiNo
+      </h3>
+      <h3 class="is-size-5">
+        Add your first note by clicking the Button below
+      </h3>
+    </div>
     <button @click="add" class="button is-add-button is-bottom-button">
       <i class="fas fa-plus" />
     </button>
