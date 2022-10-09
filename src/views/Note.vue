@@ -8,6 +8,7 @@
         @keyup.enter="goToNote"
     />
     <br> -->
+    <i @click="save" class="fas fa-check is-save-icon"></i>
       <textarea
         type="text"
         class="noteInput"
@@ -15,9 +16,9 @@
         v-model="note.note"
         ref="note"
     />
-    <button @click="save" class="button is-bottom-button is-save-button">
+    <!-- <button @click="save" class="button is-bottom-button is-save-button">
       Save
-    </button>
+    </button> -->
   </div>
 </template>
 
@@ -49,12 +50,18 @@ export default {
             this.getNoteById(id)
         }
     },
+    mounted () {
+      this.$refs.note.focus()
+    },
     methods: {
         goToNote () {
             this.$refs.note.focus()
         },
         save () {
-            if(!this.note.note.length) return
+            if(!this.note.note.length) {
+                this.$refs.note.focus()
+                return
+            }
             
             !this.edit ? this.create() : this.editNote()
         },

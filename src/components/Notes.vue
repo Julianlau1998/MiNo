@@ -1,28 +1,38 @@
 <template>
-  <div>
+  <div class="notes">
     <MiniNote
       v-for="note in notes"
       :key="note.id"
       :note="note"
       @open="openNote(note.id)"
-      @delete="deleteNote"
+      @delete="openDeleteModal(note)"
     />
     <button @click="add" class="button is-add-button is-bottom-button">
       <i class="fas fa-plus" />
     </button>
+    <DeleteModal
+        v-if="showDeleteModal"
+        :note="noteToDelete"
+        @delete="deleteNote"
+        @cancel="hideDeleteModal"
+    />
   </div>
 </template>
 
 <script>
 import MiniNote from '@/components/MiniNote.vue'
+import DeleteModal from '@/components/modals/DeleteModal.vue'
 export default {
   components: {
-    MiniNote
+    MiniNote,
+    DeleteModal
   },
   data () {
     return {
       notes: [
-      ]
+      ],
+      showDeleteModal: false,
+      noteToDelete: {}
     }
   },
   created () {
@@ -32,9 +42,18 @@ export default {
       }
   },
   methods: {
+    openDeleteModal (note) {
+      this.showDeleteModal = true
+      this.noteToDelete = note
+    },
+    hideDeleteModal () {
+      this.showDeleteModal = false
+      this.deviceToDelete = {}
+    },
     deleteNote (id) {
       this.notes = this.notes.filter((note) => note.id !== id)
       localStorage.setItem('notes', JSON.stringify(this.notes))
+      this.showDeleteModal = false
     },
     openNote(id) {
       this.$router.push(`/note/${id}`)

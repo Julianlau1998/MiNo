@@ -53,7 +53,7 @@ body {
 .is-bottom-button {
     position: fixed;
     bottom: 2rem;
-    left: 50%;
+    left: 48%;
     transform: translate(-50%, -50%);
 }
 
@@ -74,6 +74,20 @@ body {
     border-radius: 20px;
     text-align: center; 
     z-index: 11;
+}
+
+.is-delete-modal{
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 80%;
+    max-width: 20rem;
+    height: 14rem;
+    padding: 0 1rem;
+    background-color: $mainBackground;
+    border: 2px solid $secondary;
+    border-radius: 20px;
+    text-align: center; 
 }
 
 .is-modal-wrapper {

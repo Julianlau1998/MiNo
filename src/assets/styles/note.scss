@@ -13,9 +13,18 @@
     color: $primary;
 }
 
+.is-save-icon {
+    color: $fourth;
+    position: absolute;
+    top: 1.4rem;
+    right: 2rem;
+    z-index: 100;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .noteInput {
     width: 100%;
-    max-width: 60rem;
     height: 72vh;
     background: $mainBackground;
     border-radius: 10px;

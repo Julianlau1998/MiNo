@@ -1,8 +1,9 @@
 @import './variables.scss';
 
 .is-topnav {
-    width: 99.7vw;
-    position: fixed;
+    width: 100vw;
+    max-width:100%;
+    position: absolute;
     top: 0;
     left: 0;
     background-color: $secondBackground;
