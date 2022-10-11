@@ -2,7 +2,7 @@
     <div class="is-topnav has-text-left p-3 pb-4 pt-4">
         <div class="columns is-mobile">
             <div class="column pl-5 is-pointer">
-                <span @click="home">
+                <span @click="home" class="is-topnav-title" :style="isNotePage ? 'opacity: 0' : ''">
                     MiNo
                 </span>
             </div>
@@ -41,13 +41,17 @@ export default {
         return {
             settings: false,
             shareAvailable: false,
-            playBillingSupported: false
+            playBillingSupported: false,
+            isNotePage: false
         }
     },
     created () {
         this.checkPlayBillingAvailable()
         if(navigator.share !== undefined) {
             this.shareAvailable = true
+        }
+        if (this.$route.name === 'Note' || this.$route.name === 'EditNote') {
+          this.isNotePage = true
         }
     },
     methods: {

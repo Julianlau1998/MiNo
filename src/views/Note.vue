@@ -1,5 +1,6 @@
 <template>
   <div class="note">
+    <topNav />
       <!-- <input
         type="text"
         class="titleInput"
@@ -9,7 +10,8 @@
     />
     <br> -->
     <i @click="save" class="fas fa-check is-save-icon"></i>
-      <textarea
+    <i @click="back" class="fas fa-arrow-left is-back-icon"></i>
+    <textarea
         type="text"
         class="noteInput"
         placeholder="note"
@@ -24,8 +26,10 @@
 
 <script>
 import { uuid } from 'vue-uuid'
+import topNav from '@/components/TopNav.vue'
 
 export default {
+    components: { topNav },
     data () {
         return {
             note: {
@@ -64,6 +68,9 @@ export default {
             }
             
             !this.edit ? this.create() : this.editNote()
+        },
+        back () {
+          this.$router.push('/')
         },
         create () {
             this.note.id = uuid.v4()

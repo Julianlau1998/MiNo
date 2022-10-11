@@ -13,14 +13,24 @@
     color: $primary;
 }
 
+.is-save-icon, .is-back-icon {
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+
 .is-save-icon {
     color: $fourth;
-    position: absolute;
-    top: 1.4rem;
     right: 2rem;
-    z-index: 100;
     font-size: 2rem;
-    cursor: pointer;
+    top: 1.4rem;
+}
+
+.is-back-icon {
+    color: $primary;
+    left: 2.5rem;
+    font-size: 1.5rem;
+    top: 1.7rem;
 }
 
 .noteInput {
