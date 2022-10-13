@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.mino_jl.com",
+      "sha256_cert_fingerprints":
+      ["F2:6B:93:AC:0C:04:CF:D0:01:F5:FA:62:7D:B5:2C:23:E4:27:CA:38:E7:40:FD:5C:AC:8B:22:D9:11:69:16:47"]
+    }
+  }
+]
